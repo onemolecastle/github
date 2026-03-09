@@ -1,0 +1,20 @@
+name: deploys sample homepage
+on: [push, pull_request]
+jobs:
+  run_first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: confirm identity of the OS
+        run: whoami
+      - name: check out code from github to runner
+        uses: actions/checkout@v5
+  run_second_job:
+    runs-on: windows-latest
+    steps:
+      - name: confirm identity of the OS
+        run: whoami
+      - name: more commands
+        run: |
+          dir
+          hostname
+        
