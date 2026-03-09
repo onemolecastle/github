@@ -8,4 +8,8 @@ jobs:
         run: whoami
       - name: check out code from github to runner
         uses: actions/checkout@v5
+      - name: deploy to nginx
+        run: |
+          cp $GITHUB_WORKSPACE/index.html /var/www/html/index.html
+          echo "deploy succesful"
         
